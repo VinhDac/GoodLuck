@@ -17,5 +17,3 @@ body[data-run=running] .deckpill::after{content:'';position:absolute;inset:-1px;
 .prow.spin .ptrack i{background:linear-gradient(90deg,var(--rb1),var(--rb2),var(--rb3),var(--rb4),var(--rb5),var(--rb1)) 0 0/300px 100%;animation:rbrun 1.5s linear infinite}
 @keyframes rbrun{to{background-position:-300px 0}}
 @keyframes rbring{to{background-position:0 0,-300px 0}}
-:root{--ink:#E8E8E8;--dim:#D6D6D6;--mute:#C4C4C4;}
-.side,.statusbar{--ink:#B0B0B0;--dim:#A2A2A2;--mute:#9C9C9C;}
