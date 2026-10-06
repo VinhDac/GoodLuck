@@ -65,16 +65,17 @@
 
 <h2>2. Give the token to GoodLuck!</h2>
 <ol class="do">
-  <li>On <b>Setting up</b>, open <b>Your phone</b> with its <b>Connect</b> button. Later, the same is in Settings, <b>Notifications</b>.</li>
-  <li>Paste the token and press <b>Save</b>. GoodLuck! finds your bot and asks you to message it first, with a link: <b>Open t.me/… , press Start, then press Save again.</b></li>
+  <li>Open Settings, with the cog at the foot of the sidebar, then the tab <b>Notifications</b>. It reads <b>Not connected.</b>, above the same four steps.</li>
+  <li>Paste the token in <b>Bot token</b> and press <b>Save</b>. GoodLuck! finds your bot and asks you to message it first, with a link: <b>Open t.me/…, press Start, then press Save again.</b></li>
   <li>Open that link: Telegram opens your bot. Press <b>Start</b>.</li>
-  <li>Back in GoodLuck!, press <b>Save</b> again. The box can stay empty: this time GoodLuck! finds your chat and remembers it.</li>
+  <li>Back in GoodLuck!, press <b>Save</b> again. The box can stay empty: this time GoodLuck! finds your chat, remembers it, and says <b>✅ That worked</b>.</li>
 </ol>
-<figure class="screen"><div class="frame"><iframe src="../../app/first.html#open=phone&amp;hl=phone" loading="lazy" title="Your phone, open on Setting up"></iframe></div><figcaption>Your phone, open on the first screen: the four steps, the token box and Save. <a href="../../app/first.html">Open it in the demo</a></figcaption></figure>
+<figure class="screen"><div class="frame"><iframe src="../../app/first.html#sheet=first-settings.html&amp;tab=bao&amp;hl=token" loading="lazy" title="Settings, Notifications, not connected yet"></iframe></div><figcaption>Settings, Notifications, before a bot is connected: the four steps, the token box and Save. <a href="../../app/first.html#sheet=first-settings.html&amp;tab=bao">Open it in the demo</a></figcaption></figure>
+<p class="muted">Still on the Setting up screen? Its card <b>Your phone</b> does the same, with its own <b>Connect</b> button.</p>
 
 <h2>3. Test it</h2>
 <ol class="do">
-  <li>Open Settings, with the cog at the foot of the sidebar, then the tab <b>Notifications</b>. It reads <b>✓ Connected</b>.</li>
+  <li>Still in Settings, <b>Notifications</b>, it now reads <b>✓ Connected</b>.</li>
   <li>Press <b>Test</b>. This arrives on your phone:</li>
 </ol>
 <figure class='mock chat'><div class=who><i></i><div>GoodLuck!<small>your bot</small></div></div><div class=msgs><div class='msg'>✅ <b>GoodLuck! is connected</b>
@@ -140,7 +141,7 @@ Zioziast Analytics · Data Scientist → rejected
 Mutraer Capital · Quantitative Researcher → rejected</div></div></figure>
 
 <h3>End-of-day report</h3>
-<p>Once a day, at 20:00 unless you change the hour in Settings, <b>Notifications</b>: today's numbers, the best new jobs you have not applied to, and what is waiting for you. It is sent only if GoodLuck! is open at that hour.</p>
+<p>Once a day, at 20:00 unless you change the hour in Settings, <b>Notifications</b>: today's numbers, the best new jobs you have not applied to, and what is waiting for you. If GoodLuck! is closed at that hour, the report goes out when you open it later that evening.</p>
 <figure class='mock chat'><div class=who><i></i><div>GoodLuck!<small>your bot</small></div></div><div class=msgs><div class='msg'>📊 <b>Tue 6 Oct</b>
 new jobs: <b>80</b> · 5 best score
 applications sent: <b>0</b>
@@ -186,7 +187,7 @@ Send a .docx or PDF here to add or replace a CV.
   <tr><th>Write</th><th>To get</th></tr>
   <tr><td>words</td><td>jobs whose title or company contains them, such as <code>/jobs data analyst</code></td></tr>
   <tr><td>70+ or 60-80</td><td>a score of at least 70, or between 60 and 80</td></tr>
-  <tr><td>7d, 30d or 90d</td><td>posted in the last 7, 30 or 90 days</td></tr>
+  <tr><td>7d, 30d or 90d</td><td>posted in the last 7, 30 or 90 days (a posting with no date is left out)</td></tr>
   <tr><td>remote or near</td><td>remote jobs only, or jobs near where you are based</td></tr>
   <tr><td>a country</td><td>jobs there, written as one word: <code>uk</code>, <code>usa</code>, <code>singapore</code></td></tr>
   <tr><td>direct or agency</td><td>jobs from direct employers only, or from agencies only</td></tr>

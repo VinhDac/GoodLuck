@@ -52,6 +52,7 @@
     applied: "[data-post='/api/track/add']",
     queue: '.mbtn.qua',
     settings: '[data-appset]',
+    token: 'form:has(input[name=token])',
   };
   const asked = new URLSearchParams(location.hash.slice(1));
   const pick = (name) => {
