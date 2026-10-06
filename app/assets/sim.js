@@ -25,13 +25,63 @@
     '.simbadge{position:fixed;right:14px;bottom:34px;z-index:80;font-size:11px;' +
     'padding:4px 10px;border-radius:999px;background:var(--panel);' +
     'border:1px solid var(--line-2);color:var(--mute)}' +
-    '.simbadge a{color:var(--acc);text-decoration:none;margin-left:6px}';
+    '.simbadge a{color:var(--acc);text-decoration:none;margin-left:6px}' +
+    '.simhl{outline:2px solid #F2B866;outline-offset:3px;border-radius:8px;' +
+    'animation:simhl 1.6s ease-in-out infinite}' +
+    '@keyframes simhl{50%{outline-color:rgba(242,184,102,.25)}}' +
+    '@media (prefers-reduced-motion:reduce){.simhl{animation:none}}';
   document.head.appendChild(style);
+
+  // ------------------------------------------------------------ pointed at
+  // The site's guide shows a screen at the control it is talking about:
+  //   page.html#hl=run                 ring a control (a name below, or CSS)
+  //   page.html#sheet=settings.html&tab=bao   open a sheet, at a tab
+  //   first.html#open=mail             unfold a card of the Setting up sheet
+  // The ring is brought into view inside this page only (the page around
+  // the frame does not move). Such a screen is part of the guide, so it
+  // carries no demo badge.
+  const NAMED = {
+    run: '.deckpill',
+    best: "[data-widget]:has(a[href='search-best.html'])",
+    titles: '[data-tagfield]:has([name=job_titles])',
+    skills: '[data-tagfield]:has([name=skills_strong])',
+    import: '.impform',
+    mail: "details.oconn:has(form[data-post='/api/mail/setup'])",
+    phone: "details.oconn:has(form[data-post='/api/phone/setup'])",
+    why: '.bdcard',
+    applied: "[data-post='/api/track/add']",
+    queue: '.mbtn.qua',
+    settings: '[data-appset]',
+  };
+  const asked = new URLSearchParams(location.hash.slice(1));
+  const pick = (name) => {
+    try { return name ? $(NAMED[name] || name) : []; } catch (err) { return []; }
+  };
+  function reveal(el) {
+    let box = el.parentElement;
+    while (box && box !== body && !(box.scrollHeight > box.clientHeight &&
+           /(auto|scroll)/.test(getComputedStyle(box).overflowY))) box = box.parentElement;
+    const top = el.getBoundingClientRect().top;
+    if (box && box !== body) box.scrollTop += top - box.getBoundingClientRect().top - box.clientHeight / 3;
+    else document.scrollingElement.scrollTop += top - innerHeight / 3;
+  }
+  function point() {
+    pick(asked.get('open')).forEach((el) => {
+      const fold = el.closest('details') || el.querySelector('details');
+      if (fold) fold.open = true;
+    });
+    const tab = asked.get('tab') && document.querySelector(`[data-stab='${asked.get('tab')}']`);
+    if (tab) tab.click();
+    const ringed = pick(asked.get('hl'));
+    ringed.forEach((el) => el.classList.add('simhl'));
+    if (ringed.length) setTimeout(() => reveal(ringed[0]), 60);
+  }
+  const guided = ['hl', 'open', 'tab', 'sheet'].some((k) => asked.has(k));
 
   const badge = document.createElement('div');
   badge.className = 'simbadge';
   badge.innerHTML = 'Demo with fictional data<a href="../download/" target="_top">Download</a>';
-  body.appendChild(badge);
+  if (!guided) body.appendChild(badge);
 
   let noteTimer = 0;
   function note(text) {
@@ -150,13 +200,16 @@
   // ------------------------------------------------------------ the sheet
   const sheet = document.querySelector('[data-sheet]');
   function openSheet(url) {
-    if (!sheet) return;
-    fetch(url).then((r) => r.text()).then((html) => {
+    if (!sheet) return Promise.resolve();
+    return fetch(url).then((r) => {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.text();
+    }).then((html) => {
       const box = sheet.querySelector('.sheetbox');
       const doc = new DOMParser().parseFromString(html, 'text/html');
       box.innerHTML = doc.body ? doc.body.innerHTML : html;
       sheet.hidden = false;
-    }).catch(() => note('Settings open in the app itself.'));
+    }).catch(() => note('This opens in the app itself.'));
   }
   function closeSheet() {
     if (sheet) { sheet.hidden = true; sheet.querySelector('.sheetbox').innerHTML = ''; }
@@ -212,7 +265,7 @@
     }
     if (t.closest('[data-appset]')) {
       e.preventDefault();
-      note('Settings (the colours, your mark, the hours the app watches) live in the app itself.');
+      openSheet('settings.html');
       return;
     }
     if (t.closest('[data-close]') || (sheet && t === sheet)) { e.preventDefault(); closeSheet(); return; }
@@ -266,18 +319,25 @@
   });
 
   // ------------------------------------------------------------ on arrival
+  // THE FIRST LAUNCH (first.html, an empty store) opens on its Setting up
+  // sheet, with the station off and nothing playing, as the app does.
+  const firstLaunch = Boolean(body.dataset.setup);
   $('[data-sugdrop]').forEach((drop) => filter(drop, ''));
   idle();
-  setRun('idle');
-  fetch('assets/state.json').then((r) => r.json()).then((s) => {
-    state = Object.assign(state, s, { state: 'idle' });
-    $('[data-journal]').forEach((b) => {
-      b.innerHTML = '';
-      state.events.forEach((ev) => addLine(b, ev, false));
-    });
-    if (state.events.length) $('[data-lastmsg]').forEach((el) => { el.textContent = state.events[0].text; });
-    setRun('idle');
-  }).catch(() => { /* opened from disk: the journal stays empty */ });
-  setTimeout(playRound, 6000);
-  setInterval(playRound, ROUND_EVERY);
+  setRun(firstLaunch ? 'paused' : 'idle');
+  const opening = asked.get('sheet') || (firstLaunch ? 'onboarding.html' : '');
+  (opening ? openSheet(opening) : Promise.resolve()).then(point);
+  if (!firstLaunch) {
+    fetch('assets/state.json').then((r) => r.json()).then((s) => {
+      state = Object.assign(state, s, { state: 'idle' });
+      $('[data-journal]').forEach((b) => {
+        b.innerHTML = '';
+        state.events.forEach((ev) => addLine(b, ev, false));
+      });
+      if (state.events.length) $('[data-lastmsg]').forEach((el) => { el.textContent = state.events[0].text; });
+      setRun('idle');
+    }).catch(() => { /* opened from disk: the journal stays empty */ });
+    setTimeout(playRound, 6000);
+    setInterval(playRound, ROUND_EVERY);
+  }
 })();

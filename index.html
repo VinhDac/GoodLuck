@@ -39,70 +39,143 @@
   </div>
 </div></section>
 
-<section><div class="wrap">
+<section id="how"><div class="wrap">
   <div class="head">
-    <span class="kicker grad">How it works</span>
-    <h2>Set it up once. It keeps going.</h2>
-    <p>Three steps, then GoodLuck! does the daily work of a job search for you: looking, sorting and keeping track.</p>
+    <span class="kicker grad">How to use it</span>
+    <h2>Six steps, then it runs by itself.</h2>
+    <p>About fifteen minutes to set up, then a few minutes a day. Each step shows the real screen, with the place to click ringed.</p>
   </div>
-  <div class="steps">
-    <div class="step">
-      <h3>Tell it what you want</h3>
-      <p>Pick the job titles you would take and add your CV. Suggestions follow every choice you make, so a full list takes minutes, not an evening.</p>
-    </div>
-    <div class="step">
-      <h3>Start a session</h3>
-      <p>Every hour it searches job sites and companies' job boards and reads the job alerts in your inbox, keeps the titles you asked for, and scores each new posting against your CV.</p>
-    </div>
-    <div class="step">
-      <h3>Decide and apply</h3>
-      <p>The best scores wait on Home, newest first. You choose and you apply. Replies then move your applications along by themselves.</p>
-    </div>
-  </div>
-</div></section>
+  <div class="moves">
 
-<section class="alt"><div class="wrap">
-  <div class="head">
-    <span class="kicker grad">What it does</span>
-    <h2>Everything a job search needs, in one window.</h2>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h3>A search that keeps going</h3>
-      <p>Job sites, companies' own job boards and the job alerts in your inbox, read every hour and sorted for you. Postings found closed are marked expired, so dead links do not pile up.</p>
-      <a class="more" href="app/search.html">See Search in the demo</a>
+    <div class="move">
+      <div class="text">
+        <h3>Tell it what you want</h3>
+        <p>Your job titles decide which jobs it keeps. Your CV and skills decide how each one scores.</p>
+        <ol>
+          <li>On the first screen, press <b>Import your CV (.docx or PDF)</b>, then <b>Save selected</b> to keep what it read.</li>
+          <li>In <b>What you want</b>, click the job titles under the box. The list follows each pick: aim for 15 to 20.</li>
+          <li>Do the same for <b>Your skills</b>, answer the rest and press <b>Save</b>.</li>
+        </ol>
+        <a class="more" href="guide/profile/">Full steps</a>
+      </div>
+      <figure class="screen"><div class="frame"><iframe src="app/profile-muc_tieu.html#hl=titles" loading="lazy" title="What you want, with the job titles ringed"></iframe></div><figcaption>The real screen, with fictional data. <a href="app/profile-muc_tieu.html">Open it in the demo</a></figcaption></figure>
     </div>
-    <div class="feature">
-      <h3>A score you can read</h3>
-      <p>Every job is scored by how much of what it asks for your CV already shows. 70 is your mark: at or above it, a job is a best score. Open any job to see what it asks for and what your CV covers.</p>
-      <a class="more" href="app/search-best.html">See the best scores</a>
-    </div>
-    <div class="feature">
-      <h3>Applications that track themselves</h3>
-      <p>Connect your mailbox once. Confirmations, interview invitations and rejections update your applications at every round, and the few mails that need you wait in the Queue.</p>
-      <a class="more" href="app/track.html">See Track in the demo</a>
-    </div>
-    <div class="feature">
-      <h3>What your CV is missing</h3>
-      <p>The CV tab counts what the jobs you want keep asking for that your CV never mentions, and how many more jobs would reach your mark if it did.</p>
-      <a class="more" href="app/cv.html">See the CV tab</a>
-    </div>
-  </div>
-</div></section>
 
-<section><div class="wrap split">
-  <div>
-    <span class="kicker grad">Every day</span>
-    <h2>Built for every day, not for one afternoon.</h2>
-    <p style="margin-top:16px">A job search is won by showing up, week after week. GoodLuck! does the showing up: it keeps watching while you study, work or sleep, and keeps the whole picture in one place. Ten minutes a day is enough to stay on top of it.</p>
-    <p>Connect your phone through Telegram and it tells you about the new jobs each search keeps and the applications that move, without a sound at night. Ask it for <code>/jobs</code>, <code>/applications</code> or <code>/status</code> whenever you like.</p>
+    <div class="move">
+      <div class="text">
+        <h3>Connect your Gmail</h3>
+        <p>Replies from employers then update your applications by themselves. GoodLuck! only reads your mail.</p>
+        <ol>
+          <li>Turn on 2-Step Verification in your Google account.</li>
+          <li>Open <a href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</a>, type <b>GoodLuck</b>, press <b>Create</b> and copy the 16 letters.</li>
+          <li>In GoodLuck!, on <b>The job mailbox</b>, press <b>Connect</b>, paste them and press <b>Connect</b>.</li>
+        </ol>
+        <a class="more" href="guide/gmail/">Full steps</a>
+      </div>
+      <figure class="mock web">
+        <div class="bar"><i></i><i></i><i></i><span>myaccount.google.com/apppasswords</span></div>
+        <div class="page">
+          <h4>App passwords</h4>
+          <p>Name the app, then press Create.</p>
+          <label>App name</label>
+          <div class="field">GoodLuck</div>
+          <span class="act">Create</span>
+          <div class="popup"><b>Generated app password</b><br><code>abcd efgh ijkl mnop</code><br><span class="act">Done</span></div>
+        </div>
+      </figure>
+    </div>
+
+    <div class="move">
+      <div class="text">
+        <h3>Connect your phone</h3>
+        <p>Telegram brings each search's new jobs and every reply to your phone, and lets you run GoodLuck! from it.</p>
+        <ol>
+          <li>In Telegram, open <b>@BotFather</b>, send <code>/newbot</code>, choose a name, then a username ending in <i>bot</i>. Copy the token it gives you.</li>
+          <li>In GoodLuck!, on <b>Your phone</b>, paste the token and press <b>Save</b>.</li>
+          <li>Open the link it shows, press <b>Start</b>, then press <b>Save</b> again. In Settings, <b>Notifications</b>, press <b>Test</b>.</li>
+        </ol>
+        <a class="more" href="guide/telegram/">Full steps</a>
+      </div>
+      <div class="phone"><figure class='mock chat'><div class=who><i></i><div>GoodLuck!<small>your bot</small></div></div><div class=msgs><div class='msg'>🔎 <b>80 new jobs</b> · 5 best score
+
+<b>100</b> · <a>Founding Machine Learning Engineer (Optimization)</a>
+<i>Broviost Group · London Area, United Kingdom</i>
+
+<b>100</b> · <a>Data Scientist Intern - 2027</a>
+<i>Bioreav Trading · London, England</i>
+
+<b>80</b> · <a>Data Scientist - Financial Services | London</a>
+<i>Heprev Software · Greater London, England</i>
+
+<b>80</b> · <a>Junior Data Scientist (Remote) – £35,000 + Training Provided – Entry Level</a>
+<i>Vaemo Analytics · United Kingdom (Remote)</i>
+
+<b>75</b> · <a>Data Scientist</a>
+<i>Trupruzern Capital · England, United Kingdom (Remote)</i>
+
+69 · <a>Finance Data Scientist</a>
+<i>Tesae Consulting · United Kingdom</i>
+
+69 · <a>Finance Data Scientist</a>
+<i>Vubios Consulting · United Kingdom</i>
+
+67 · <a>Machine Learning Engineer</a>
+<i>Zastuv Software · London Area, United Kingdom</i>
+
+67 · <a>Data Scientist – Computational Keaguseav Research, 12-month FTC</a>
+<i>Saetiasiam Research · London, England</i>
+
+67 · <a>Financial Crime Risk Analyst - Risk Management - Newcastle - Permanent</a>
+<i>Diaviatust Data · Newcastle Upon Tyne, England</i>
+
++ 70 more in Search</div><div class='msg me'>/job 1360</div><div class='msg'><b>100</b> <a>Founding Machine Learning Engineer (Optimization)</a>
+Broviost Group · London Area, United Kingdom<div class=keys><span>Send CV for this job</span><span>I applied</span><span>Expired</span></div></div></div></figure></div>
+    </div>
+
+    <div class="move">
+      <div class="text">
+        <h3>Start a session</h3>
+        <p>A session runs a round straight away, then one every hour: it searches, scores what is new, and reads your mail.</p>
+        <ol>
+          <li>Press <b>Start session</b> on the bar at the top of Home.</li>
+          <li>The bar lights up while a round runs, and the journal says what it is doing. The first round takes the longest.</li>
+          <li>Close the window if you like: the session carries on, with its key by the clock.</li>
+        </ol>
+        <a class="more" href="guide/first-session/">Full steps</a>
+      </div>
+      <figure class="screen"><div class="frame"><iframe src="app/index.html#hl=run" loading="lazy" title="Home, with the session bar ringed"></iframe></div><figcaption>The real screen, with fictional data. <a href="app/index.html">Open it in the demo</a></figcaption></figure>
+    </div>
+
+    <div class="move">
+      <div class="text">
+        <h3>Every morning, apply to the best</h3>
+        <p>Jobs that reach your mark, 70 unless you change it, wait on Home under <b>Best score</b>, newest first.</p>
+        <ol>
+          <li>On Home, open a job from <b>Best score</b>.</li>
+          <li>Read <b>Why this score</b>: each thing the posting asks for, and the line of your CV that shows it.</li>
+          <li>Apply on the employer's site, then press <b>I applied</b>. The job moves to Track.</li>
+        </ol>
+        <a class="more" href="guide/every-day/">Full steps</a>
+      </div>
+      <figure class="screen"><div class="frame"><iframe src="app/job.html#hl=why" loading="lazy" title="A job, with Why this score ringed"></iframe></div><figcaption>The real screen, with fictional data. <a href="app/job.html">Open it in the demo</a></figcaption></figure>
+    </div>
+
+    <div class="move">
+      <div class="text">
+        <h3>Let the replies come to you</h3>
+        <p>Confirmations, interview invitations and rejections move each application along at every round.</p>
+        <ol>
+          <li>Open <b>Track</b>: every application, grouped by where it stands.</li>
+          <li>When <b>Queue</b> shows a number, open it. Each mail the app could not place waits there for one click.</li>
+          <li>An application silent for 20 days is treated as rejected, so Track shows what is still alive.</li>
+        </ol>
+        <a class="more" href="guide/every-day/#track">Full steps</a>
+      </div>
+      <figure class="screen"><div class="frame"><iframe src="app/track.html#hl=queue" loading="lazy" title="Track, with the Queue ringed"></iframe></div><figcaption>The real screen, with fictional data. <a href="app/track.html">Open it in the demo</a></figcaption></figure>
+    </div>
+
   </div>
-  <ol class="routine">
-    <li><b>Morning</b><span>Open Home. The new best scores are at the top, newest first.</span></li>
-    <li><b>Apply</b><span>Open a job, read what it asks for, apply on the employer's site, then mark it applied.</span></li>
-    <li><b>All day</b><span>Replies land in Track by themselves. The Queue holds the few that need you.</span></li>
-    <li><b>Each week</b><span>Expand Last 7 days on Home to see the weeks behind you: jobs found, applications sent, answers.</span></li>
-  </ol>
+  <p class="aside">Once a week, open the <b>CV</b> tab: it lists what the jobs you want keep asking for that your CV never says, and how many more jobs would reach your mark if it did. <a href="guide/reference/#cv">Every screen, explained</a></p>
 </div></section>
 
 <section class="alt"><div class="wrap split">
@@ -152,5 +225,6 @@
     <a href="https://github.com/VinhDac/GoodLuck/issues">Report a problem</a>
   </nav>
 </div></footer>
+<script src="assets/screens.js"></script>
 </body>
 </html>

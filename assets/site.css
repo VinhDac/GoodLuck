@@ -152,6 +152,107 @@ table.plain th,table.plain td{text-align:left;padding:9px 12px;border-bottom:1px
 table.plain th{color:var(--mute);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
 table.plain td:first-child{color:var(--ink);white-space:nowrap}
 
+/* a screen of the app: the demo itself, drawn at a laptop window's size and
+   shrunk to its column (screens.js), the control in question ringed */
+.screen{margin:0}
+.screen .frame{position:relative;width:100%;aspect-ratio:1180/740;overflow:hidden;
+  border:1px solid var(--line-2);border-radius:12px;background:var(--side);
+  box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.screen iframe{position:absolute;top:0;left:0;width:1180px;height:740px;border:0;
+  transform-origin:0 0;transform:scale(var(--k,.6))}
+.screen figcaption{font-size:13px;color:var(--mute);margin-top:9px}
+.prose .screen{margin:22px 0}
+
+/* the six moves on the first page */
+.moves{counter-reset:move}
+.move{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;
+  align-items:center;padding:38px 0;border-top:1px solid var(--line)}
+.move:first-child{border-top:0;padding-top:6px}
+.move:nth-child(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.move:nth-child(even) .text{order:2}
+.move .text h3{font-size:22px;margin:0 0 10px;display:flex;gap:12px;align-items:center}
+.move .text h3:before{counter-increment:move;content:counter(move);display:grid;
+  place-items:center;flex:none;width:32px;height:32px;border-radius:50%;font-size:15px;
+  border:1.5px solid transparent;
+  background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--rainbow) border-box}
+section.alt .move .text h3:before{background:linear-gradient(var(--side),var(--side)) padding-box,
+  var(--rainbow) border-box}
+.move .text p{color:var(--dim)}
+.move ol{margin:0 0 14px;padding-left:20px;color:var(--dim)}
+.move ol li{margin:5px 0}
+.move b{color:var(--ink)}
+.move .more{font-size:14.5px;font-weight:600}
+
+.move .phone .mock.chat{margin:0 auto;max-width:400px}
+.move .phone .mock.chat .msgs{max-height:470px;overflow:auto}
+.move .mock.web{margin:0 auto}
+.aside{margin:30px 0 0;color:var(--dim);font-size:15px;max-width:780px}
+.aside b{color:var(--ink)}
+
+/* a step of the guide */
+.guide .stepno{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  margin:0 0 8px;color:var(--mute)}
+.guide .need,.guide .done,.guide .trouble{border-radius:12px;padding:14px 18px;margin:18px 0;
+  color:var(--dim)}
+.guide .need{background:var(--panel);border:1px solid var(--line-2)}
+.guide .done{border:1.5px solid transparent;
+  background:linear-gradient(var(--panel),var(--panel)) padding-box,var(--rainbow) border-box}
+.guide .trouble{background:transparent;border:1px dashed var(--line-2)}
+.guide .need>b:first-child,.guide .done>b:first-child,.guide .trouble>b:first-child{
+  display:block;color:var(--ink);margin-bottom:4px}
+.guide ol.do{counter-reset:do;list-style:none;padding-left:0}
+.guide ol.do>li{counter-increment:do;position:relative;padding-left:40px;margin:12px 0}
+.guide ol.do>li:before{content:counter(do);position:absolute;left:0;top:1px;width:26px;
+  height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;
+  color:var(--ink);background:var(--panel-2);border:1px solid var(--line-2)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:56px;padding-top:22px;
+  border-top:1px solid var(--line)}
+.pager a{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border:1px solid var(--line-2);
+  border-radius:12px;color:var(--ink);font-weight:600;max-width:48%}
+.pager a span{font-size:12.5px;color:var(--mute);font-weight:500}
+.pager a:hover{text-decoration:none;border-color:var(--dim)}
+.pager a.next{margin-left:auto;text-align:right}
+.toc a.on{color:var(--ink);font-weight:600}
+.toc b+a,.toc a+b{margin-top:14px}
+.toc b:not(:first-child){margin-top:22px}
+
+/* drawn screens of what happens outside the app: a page in your browser,
+   a chat on your phone */
+.mock{margin:22px 0;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);
+  font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.mock.web{background:#F6F7F9;color:#202124;max-width:560px}
+.mock.web .bar{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#E6E8EB;
+  border-bottom:1px solid #D5D8DC}
+.mock.web .bar i{width:10px;height:10px;border-radius:50%;background:#C3C7CC}
+.mock.web .bar span{margin-left:8px;flex:1;padding:4px 10px;border-radius:7px;background:#fff;
+  color:#4A4F55;font-size:12.5px}
+.mock.web .page{padding:20px 24px 22px}
+.mock.web h4{margin:0 0 6px;font-size:19px;font-weight:600;color:#202124}
+.mock.web p{margin:0 0 14px;color:#4A4F55;font-size:13.5px}
+.mock.web label{display:block;font-size:12.5px;color:#4A4F55;margin-bottom:4px}
+.mock.web .field{border:1px solid #9AA0A6;border-radius:6px;padding:8px 12px;margin-bottom:14px;
+  background:#fff;max-width:300px}
+.mock.web .act{display:inline-block;padding:7px 18px;border-radius:999px;background:#1A73E8;
+  color:#fff;font-weight:600;font-size:13.5px}
+.mock.web b,.prose .mock.web b,.move .mock.web b{color:#202124}
+.mock.web .popup{margin-top:18px;padding:16px 18px;border-radius:12px;background:#fff;
+  box-shadow:0 4px 18px rgba(0,0,0,.14)}
+.mock.web .popup code{display:inline-block;margin:8px 0 12px;padding:6px 12px;border-radius:6px;
+  background:#FEF7E0;color:#202124;font:600 17px ui-monospace,Consolas,monospace;letter-spacing:.06em}
+.mock.chat{background:#17212B;max-width:440px}
+.mock.chat .who{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#232E3C;
+  color:#E9EEF3;font-weight:600}
+.mock.chat .who i{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#6AA6FF,#A98CF8)}
+.mock.chat .who small{display:block;font-weight:400;color:#8DA2B5;font-size:11.5px}
+.mock.chat .msgs{display:flex;flex-direction:column;gap:8px;padding:14px}
+.mock.chat .msg{max-width:84%;padding:8px 12px;border-radius:12px;background:#182533;color:#E9EEF3;
+  white-space:pre-wrap;word-break:break-word;font-size:13.5px}
+.mock.chat .msg.me{align-self:flex-end;background:#2B5278}
+.mock.chat .msg code{font:12.5px ui-monospace,Consolas,monospace;color:#F2B866}
+.mock.chat .keys{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.mock.chat .keys span{flex:1;text-align:center;padding:6px 10px;border-radius:8px;
+  background:rgba(255,255,255,.08);color:#E9EEF3;font-size:12.5px}
+
 /* download */
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:30px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--round);padding:28px}
@@ -166,11 +267,15 @@ table.plain td:first-child{color:var(--ink);white-space:nowrap}
 .foot a:hover{color:var(--ink)}
 
 @media (max-width:900px){
-  .steps,.features,.split,.cards{grid-template-columns:minmax(0,1fr)}
+  .steps,.features,.split,.cards,.move,.move:nth-child(even){grid-template-columns:minmax(0,1fr)}
+  .move:nth-child(even) .text{order:0}
   .doc{grid-template-columns:minmax(0,1fr)}
   .toc{position:static;max-height:none;border-left:0;padding-left:0}
   .top nav a:not(.btn){display:none}
   section{padding:64px 0}
+}
+@media (max-width:640px){
+  .screen .frame{display:none}
 }
 @media (max-width:520px){
   .wrap{padding:0 16px}
