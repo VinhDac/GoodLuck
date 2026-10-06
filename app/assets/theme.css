@@ -1,0 +1,21 @@
+:root{--acc-rgb:140,156,248;--acc:#8C9CF8;--acc-2:#7D8BDD;--acc-ink:#1B1E2F;--acc-bg:rgba(140,156,248,.11);--acc-bg-2:rgba(140,156,248,.20);--acc-fill:linear-gradient(120deg,#6AA6FF,#A98CF8,#EF7FA0,#F2B866,#66CB8E);--rb1:#6AA6FF;--rb2:#A98CF8;--rb3:#EF7FA0;--rb4:#F2B866;--rb5:#66CB8E;}
+.chip.on{background:linear-gradient(var(--panel),var(--panel)) padding-box,var(--acc-fill) border-box;border-color:transparent;color:var(--ink)}
+label.chip input:checked + span{background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--acc-fill) border-box;border-color:transparent;color:var(--ink)}
+.vchip.on{background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--acc-fill) border-box;border-color:transparent;color:var(--ink)}
+button.primary{background:linear-gradient(var(--panel),var(--panel)) padding-box,var(--acc-fill) border-box;border-color:transparent;color:var(--ink)}
+button.primary:hover{background:linear-gradient(var(--panel-2),var(--panel-2)) padding-box,var(--acc-fill) border-box;border-color:transparent;color:var(--ink)}
+.pill.offer{background:linear-gradient(var(--panel),var(--panel)) padding-box,var(--acc-fill) border-box;border-color:transparent;color:var(--ink)}
+.steps li.now{background:linear-gradient(var(--panel),var(--panel)) padding-box,var(--acc-fill) border-box;border-color:transparent;color:var(--ink)}
+.steps li.now a{color:var(--ink)}
+.hchart.nop .hplot{isolation:isolate}
+.hchart.nop .hbar{position:relative;overflow:visible;border:2px solid transparent;background:linear-gradient(var(--panel),var(--panel)) padding-box,linear-gradient(0deg,var(--rb1),var(--rb2),var(--rb3),var(--rb4),var(--rb5)) border-box}
+.hchart.nop .hbar::after{content:'';position:absolute;inset:-2px;z-index:-1;border-radius:inherit;background:linear-gradient(0deg,var(--rb1),var(--rb2),var(--rb3),var(--rb4),var(--rb5));filter:blur(8px);opacity:.35}
+body[data-run=running] .deckwrap{isolation:isolate}
+body[data-run=running] .deckpill{position:relative;border-color:transparent;box-shadow:none;background:linear-gradient(var(--panel),var(--panel)) padding-box,linear-gradient(90deg,var(--rb1),var(--rb2),var(--rb3),var(--rb4),var(--rb5),var(--rb1)) 0 0/300px 100% border-box;animation:rbring 4s linear infinite}
+body[data-run=running] .deckpill::after{content:'';position:absolute;inset:-1px;z-index:-1;border-radius:inherit;background:linear-gradient(90deg,var(--rb1),var(--rb2),var(--rb3),var(--rb4),var(--rb5),var(--rb1)) 0 0/300px 100%;filter:blur(10px);opacity:.4;animation:rbrun 4s linear infinite}
+.ptrack i{background:linear-gradient(90deg,var(--rb1),var(--rb2),var(--rb3),var(--rb4),var(--rb5),var(--rb1)) 0 0/300px 100%;animation:rbrun 4s linear infinite}
+.prow.spin .ptrack i{background:linear-gradient(90deg,var(--rb1),var(--rb2),var(--rb3),var(--rb4),var(--rb5),var(--rb1)) 0 0/300px 100%;animation:rbrun 1.5s linear infinite}
+@keyframes rbrun{to{background-position:-300px 0}}
+@keyframes rbring{to{background-position:0 0,-300px 0}}
+:root{--ink:#E8E8E8;--dim:#D6D6D6;--mute:#C4C4C4;}
+.side,.statusbar{--ink:#B0B0B0;--dim:#A2A2A2;--mute:#9C9C9C;}

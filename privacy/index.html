@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy · GoodLuck!</title>
+<meta name="description" content="What GoodLuck! keeps on your computer, what goes over the network, and why.">
+<link rel="icon" href="../app/assets/favicon.ico">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg viewBox="0 0 112 38" aria-hidden="true"><defs><linearGradient id="keypaint" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="0"><stop offset="0" stop-color="#6AA6FF"/><stop offset=".25" stop-color="#A98CF8"/><stop offset=".5" stop-color="#EF7FA0"/><stop offset=".75" stop-color="#F2B866"/><stop offset="1" stop-color="#66CB8E"/></linearGradient></defs><g fill="none" stroke="url(#keypaint)" stroke-width="4.4"><circle cx="12" cy="17.4" r="7.2"/><circle cx="25" cy="9.4" r="7.2"/><circle cx="24.4" cy="26" r="7.2"/></g><g fill="url(#keypaint)"><rect x="26" y="14.6" width="84" height="5.6" rx="2.8"/><rect x="67.6" y="8" width="4.8" height="17" rx="2.4"/><rect x="78" y="20.2" width="24" height="4.8"/><rect x="78" y="25" width="6" height="11.6"/><rect x="87.6" y="25" width="5.4" height="11.6"/><rect x="96" y="25" width="6" height="11.6"/></g></svg>GoodLuck!</a>
+  <nav>
+    <a href="../app/">Demo</a>
+    <a href="../guide/">Guide</a>
+    <a class="on" href="./">Privacy</a>
+    <a class="btn go" href="../download/">Download</a>
+  </nav>
+</div></header>
+
+<main class="wrap" style="padding:56px 24px 90px">
+<article class="prose">
+<h1>Privacy</h1>
+<p class="muted">Last updated 6 October 2026</p>
+<p class="lead">GoodLuck! has no account and no server of ours. It runs on your computer, keeps what it knows there, and sends nothing to us. This note says what it keeps, what goes over the network, and why.</p>
+
+<h2>What it keeps, and where</h2>
+<ul>
+  <li><b>Your search:</b> your profile and CV, the jobs it found, your applications, what it read in your mailbox, and its journal. They are in one folder on your computer: <code>~/Library/Application Support/jobbot</code> on a Mac, <code>%LOCALAPPDATA%\jobbot</code> on Windows.</li>
+  <li><b>Your passwords:</b> the mailbox's app password and your Telegram bot token are kept in your system's own vault, Keychain on a Mac and Credential Manager on Windows. If the vault refuses them, they are kept in a file in that folder instead.</li>
+  <li><b>Copies you make:</b> the file Export everything writes, and the backup Start over leaves on your Desktop, hold everything, your passwords included. Keep them to yourself.</li>
+</ul>
+
+<h2>What goes over the network, and why</h2>
+<h3>Job boards</h3>
+<p>To search, and once at setup to build its suggestion lists, GoodLuck! asks companies' public job boards (Greenhouse, Lever and Ashby) for their postings. These requests carry nothing about you: the boards see your IP address, as with any visit, and a note that the request comes from a personal job search app.</p>
+<h3>Job sites</h3>
+<p>To search job sites, GoodLuck! opens them in a browser window of its own, with a separate profile kept in the data folder, and does not sign in. A site receives what such a search sends: your job titles, one of your countries and your levels, with your IP address, and it may set its own cookies in that profile. GoodLuck! also opens the page of each posting it keeps from a job site or a job alert, to read it, and looks at kept ones again from time to time to see whether they have closed. All this happens only during the hours set in Settings, Run, and each source can be turned off with the <b>⚟</b> button on Search.</p>
+<h3>Your mailbox</h3>
+<p>GoodLuck! reads the job mailbox over an encrypted connection, signing in with your address and app password. To find the mail about your applications and your job alerts, it looks through your inbox for the last 30 days (at most 3,000 messages) and keeps the sender, subject, date and first lines of each message on your computer. It marks nothing as read, moves nothing, and never sends mail.</p>
+<h3>Telegram, if you connect a bot</h3>
+<p>The messages GoodLuck! sends you go through Telegram's servers: job titles, companies, places, scores and links, your applications and where they stand, and the day's numbers. Your CV or the CV report are sent only when you ask and confirm. Telegram keeps what it delivers, as it does for any message. While a bot is connected, the app keeps a connection open to Telegram to hear your commands, and it answers only your own chat.</p>
+<h3>Your browser</h3>
+<p>GoodLuck! uses Google Chrome, Microsoft Edge or Brave in the background, with a profile of its own, to read job sites and to print your CV and reports as PDFs. On Windows, the app's own window is drawn by Microsoft Edge WebView2, which is part of Windows. It starts the browser with background networking, sync and updates turned off; anything the browser does beyond that is the browser's own.</p>
+<h3>Links you click</h3>
+<p>An original posting, the page where you make an app password, the link to your bot: these open in your own browser. The app does not fetch them.</p>
+
+<h2>What it never does</h2>
+<ul>
+  <li><b>No analytics, no tracking, no crash reports, no update checks.</b> Nothing about you or your use of the app is sent to us or to anyone else.</li>
+  <li><b>No mail sent, no application sent, nothing posted.</b> Every application is yours to send.</li>
+  <li><b>Nothing open to the network.</b> The window talks to the app at 127.0.0.1, an address only your own computer can reach.</li>
+</ul>
+
+<h2>This website</h2>
+<p>These are plain pages, served by GitHub Pages. We set no cookies and use no analytics. GitHub, which hosts the site, may keep logs of visits: see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
+<p>The demo runs in your browser on fictional data. Nothing you type in it leaves your browser; it only remembers, in your browser, whether you folded its sidebar.</p>
+
+<h2>Questions</h2>
+<p>Ask on the <a href="https://github.com/VinhDac/GoodLuck/issues">issues page</a>. Never post a password, a token or your CV there.</p>
+</article>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>GoodLuck! 1.3.0 · Free for personal use</span>
+  <nav>
+    <a href="../guide/">Guide</a>
+    <a href="../download/">Download</a>
+    <a href="./">Privacy</a>
+    <a href="../license/">License</a>
+    <a href="https://github.com/VinhDac/GoodLuck/issues">Report a problem</a>
+  </nav>
+</div></footer>
+</body>
+</html>

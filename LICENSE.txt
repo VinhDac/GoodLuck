@@ -1,0 +1,62 @@
+GoodLuck! License
+Version 1, 6 October 2026
+
+In short, and not part of the license: GoodLuck! is free to use for your own job search, on your own computers. It is not for commercial use. Do not pass copies on; point people to the website instead. Do not take it apart. It comes as it is, without a warranty.
+
+1. Who and what
+
+"GoodLuck!" (the Software) means the GoodLuck! application in every version published at https://github.com/VinhDac/GoodLuck, with its documentation and its website. "We" means its author, VinhDac. "You" means the person who installs or uses it.
+
+2. What you may do
+
+We grant you a free, personal, non-exclusive, non-transferable and revocable license to download, install and use the Software on computers you own or control, for your own personal and non-commercial purposes, which include looking for a job for yourself. You may keep copies for backup.
+
+3. What you may not do
+
+You may not, and may not let anyone else:
+(a) use the Software commercially: for payment, in or for the work of a business or organisation, or to provide a service to others, including recruitment, staffing, career coaching and job application services;
+(b) sell, rent, lend, sublicense, publish, share or otherwise distribute the Software or any copy of it, or make it available over a network for others to use;
+(c) decompile, disassemble, reverse engineer or otherwise try to obtain the source code, the structure or the methods of the Software, except to the extent that the law where you live allows it despite this restriction;
+(d) modify, translate or adapt the Software, or make works based on it;
+(e) remove or change any notice of copyright, of trademark or of this license;
+(f) use the Software in breach of any law.
+
+4. Services run by others
+
+On your instructions, the Software connects to services run by others: job sites and companies' job boards, your mail provider and, if you choose, Telegram. Your use of them is governed by their own terms, and you are responsible for it. We do not control those services and are not responsible for them.
+
+5. Your data
+
+The Software keeps your data on your computer and does not send it to us. The privacy note on the website says what goes over the network, and why. You are responsible for your own backups.
+
+6. Ownership
+
+The Software is licensed to you, not sold. We keep every right, title and interest in it, including the name GoodLuck! and its key logo. Every right not granted in this license is reserved.
+
+7. Feedback
+
+If you send us ideas or suggestions, we may use them freely and owe you nothing for them.
+
+8. No warranty
+
+The Software is provided "as is" and "as available", without a warranty of any kind, express or implied, including any warranty of merchantability, of fitness for a particular purpose, of accuracy or of non-infringement. We do not promise that it will find you a job, that its scores are right, or that it will run without interruption or error.
+
+9. Limitation of liability
+
+To the fullest extent the law allows, we are not liable for any indirect, incidental, special or consequential damage, or for any loss of data, opportunity, income or profit, arising from the use of the Software or from being unable to use it, even if we were told it could happen. Where liability cannot be excluded, it is limited to the amount you paid for the Software, which is nothing. Nothing in this license limits a liability that the law does not allow to be limited.
+
+10. Ending
+
+This license ends by itself if you break any of its terms. You may end it at any time by deleting the Software. When it ends, stop using the Software and delete every copy of it. Sections 6 to 9 still apply after it ends.
+
+11. Changes
+
+We may publish new versions of the Software with new terms. The terms published with a version apply to that version.
+
+12. The whole agreement
+
+This license is the whole agreement between you and us about the Software. If a part of it cannot be enforced, the rest still applies. If we do not enforce a term, we have not given it up.
+
+Questions: https://github.com/VinhDac/GoodLuck/issues
+
+Copyright 2026 VinhDac. All rights reserved.
