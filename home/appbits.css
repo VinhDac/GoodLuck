@@ -72,8 +72,6 @@ body[data-run=running] .bxbox::after{opacity:1}
 .bxline[data-box-note]{color:var(--ink);font-weight:600}
 .bxbox[data-rest] .bxdrop{display:none}
 body.box:not(.own) .bxbox[data-rest]{inset:12px auto auto 12px;width:auto;max-width:380px;margin:0}
-html:not(.winframe) .bxbox[data-native] .bxpill{padding-left:74px}
-html:not(.winframe) .bxbox[data-native][data-rest] .bxpill{padding-left:13px}
 .bxtext{flex:1;min-width:0;display:flex;align-items:center;gap:6px;overflow:hidden;
   padding:5px 10px 5px 13px;border:1px solid var(--line-2);border-radius:20px;
   background:transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;
