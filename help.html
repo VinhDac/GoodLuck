@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoodLuck! help</title>
+<meta name="description" content="When something is wrong with GoodLuck!: find what you see, then what to do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+<header class=p-top><a class=p-brand href='index.html'><span class=p-mark></span>GoodLuck!</a><nav><a href='tour.html'>See it work</a><a href='help.html'>Help</a><a class=get href='download.html'>Download, free</a></nav></header>
+<main>
+  <h1>When something <em>is wrong</em></h1>
+  <p class="lead">Find what you see, then what to do. The app's journal says what it did and what it
+    could not do: open it from the chat, <b>Open</b>, <b>Journal</b>.</p>
+  <nav class="toc"><a href="#install">Installing</a><a href="#app">Opening</a><a href="#setup">Setting up</a>
+    <a href="#mail">The mailbox</a><a href="#phone">Your phone</a><a href="#assistant">The assistant</a>
+    <a href="#session">Sessions</a><a href="#send">Send CV</a><a href="#jobs">Jobs and scores</a>
+    <a href="#data">Your data</a></nav>
+
+  <h2 id="install">Installing</h2>
+  <ul>
+    <li><b>Windows protected your PC</b>: press <b>More info</b>, then <b>Run anyway</b>. It may ask again for each new version.</li>
+    <li><b>macOS cannot check GoodLuck</b>: close the message, then System Settings, <b>Privacy &amp; Security</b>, <b>Open Anyway</b>.</li>
+    <li>No <b>Run anyway</b> or <b>Open Anyway</b>, or the file is blocked: the computer belongs to an organisation that blocks unknown programs. Install GoodLuck! on a computer of your own.</li>
+    <li>The installer says GoodLuck! is in use: let it close GoodLuck! for you, as it offers, or quit GoodLuck! first.</li>
+  </ul>
+  <a class="watch" href="tour.html#install">Watch the install, step by step</a>
+
+  <h2 id="app">Opening the app</h2>
+  <ul>
+    <li>GoodLuck! is the small bar at the top of your screen, with its chat under it. Its minus button puts it away; the duck by the clock brings it back.</li>
+    <li>While a session runs, the bar rests as a duck in the top-left corner. Press it to open the bar again.</li>
+    <li>To quit, right-click the duck by the clock: <b>Quit GoodLuck!</b>. On a Mac the duck is in the menu bar.</li>
+    <li>Only one copy runs at a time. <b>Another copy of GoodLuck! is already running</b>: quit that copy first, from its duck.</li>
+    <li>A window with an error and nothing else: GoodLuck! could not start. <a href="https://github.com/VinhDac/GoodLuck/issues">Report it</a>, with the text of the error.</li>
+  </ul>
+
+  <h2 id="setup">Setting up</h2>
+  <ul>
+    <li><b>That PDF has no text in it</b>: it is a scan. Export the CV again from Word or Google Docs, as a PDF or a .docx.</li>
+    <li><b>That PDF cannot be opened: it asks for a password</b>: save a copy without the password, or save the CV as a .docx.</li>
+    <li><b>Only a Word file (.docx) or a PDF can be imported</b>: save the CV as one of the two.</li>
+    <li><b>Set up first</b> stays on the bar: the chat lists what is still missing, and opens the first of it. Your profile, the job mailbox and your target are needed; your phone and the assistant are not.</li>
+    <li>The lists of job titles and skills stay empty: the first time, GoodLuck! reads real postings to build them, which takes about half a minute and needs the internet.</li>
+    <li>A new computer: on the old one, Settings, <b>Export / Import</b>, <b>Export everything</b>; on the new one, <b>Import a file…</b> in the setup chat.</li>
+  </ul>
+  <a class="watch" href="tour.html#cv">Watch the setup</a>
+
+  <h2 id="mail">The job mailbox</h2>
+  <ul>
+    <li><b>this mailbox (…) differs from the profile's address</b>: the mailbox has to be your contact email, the one employers reply to. Connect that address, or change it in your profile.</li>
+    <li><b>that is not an app password (16 lowercase letters)</b>: paste the 16 letters Google showed, not your Google password.</li>
+    <li><b>Gmail refused</b>: the app password is wrong, or was deleted, or your Google password changed since. Make a new one at <a href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</a>.</li>
+    <li><b>could not reach</b>: no internet, or a firewall in the way. Try again on another network.</li>
+    <li>Google has no App passwords page for you: turn on 2-Step Verification first. A work or school account may not allow app passwords at all: use a personal account.</li>
+  </ul>
+
+  <h2 id="phone">Your phone</h2>
+  <ul>
+    <li><b>That is not a token.</b>: copy the whole line BotFather gave you, the digits before the colon included.</li>
+    <li><b>The token works, … but nobody has messaged it yet.</b>: open the link it gives, press <b>Start</b> in your bot, then press <b>Save</b> again.</li>
+    <li><b>Telegram rejected the token</b>: get a new token from BotFather, paste it and press <b>Save</b>.</li>
+    <li>The bot does not answer: GoodLuck! has to be running on your computer.</li>
+    <li>No message at all: Settings, Notifications: is <b>All messages</b> on, and the kind you expect? Press <b>Test</b>.</li>
+  </ul>
+
+  <h2 id="assistant">The assistant</h2>
+  <ul>
+    <li>It is optional: without it, the chat finds the app's screens and actions by the letters you type.</li>
+    <li><b>that is not a Groq key (one starts with gsk_)</b>: copy the key from its page again, the whole of it.</li>
+    <li><b>Groq does not know this key</b>: copy it again from its page, or make a new one.</li>
+    <li><b>Groq could not be reached</b>: check the connection, then paste the key again.</li>
+    <li>The free key has a limit each day. The small ring by the chat's line shows how much of today's is left.</li>
+  </ul>
+
+  <h2 id="session">Sessions</h2>
+  <ul>
+    <li>Nothing happens every hour: is the session on? The duck by the clock says <b>On watch · next session in … min</b> when it is. A computer that sleeps runs nothing.</li>
+    <li><b>… is running: wait for it to finish, or press Stop</b>: one round at a time.</li>
+    <li><b>could not launch Chrome</b>: install Google Chrome, or check that Microsoft Edge is there.</li>
+    <li>The job sites wait at night: the rounds that run by themselves read them only between the hours in Settings, Run (8:00 to 22:00 unless you change them). <b>Run a round now</b> reads them at any hour.</li>
+    <li>A message <b>A stage failed</b> on your phone: open the journal for why.</li>
+  </ul>
+
+  <h2 id="send">Send CV</h2>
+  <ul>
+    <li>It fills each form in a browser window of its own, the Apply window, and leaves its <b>Submit</b> to you. When the page says it was received, it goes on to the next.</li>
+    <li><b>no Submit in 15 min; the round stops here</b>: the form waited for your Submit. Send CV starts with it again next time.</li>
+    <li>A question it cannot answer: it asks you once, on your phone and in the chat. Your answer is kept for every form that asks it.</li>
+    <li><b>Your turn</b>: the page asks what only a person can do. Do it in the Apply window, then press <b>Done</b>.</li>
+    <li>A site wants you signed in: press <b>Open its form</b>, sign in there, then <b>Fill it in now</b>.</li>
+    <li>A job it does not open (it asks for more years than you have, or it is in a country you did not choose): it is in the Queue, under <b>By hand, or skip</b>, with why.</li>
+  </ul>
+  <a class="watch" href="tour.html#send">Watch Send CV</a>
+
+  <h2 id="jobs">Jobs and scores</h2>
+  <ul>
+    <li><b>Too few jobs</b>: add job titles to your profile, following the suggestions. Then look at <b>Dropped</b> in Search: each job says why it was set aside. <b>Keep it</b> brings one in.</li>
+    <li><b>No score</b>: <b>Not read yet</b> means its page has not been read: the next round reads it.</li>
+    <li><b>Scores look low</b>: open a job's <b>Why this score</b>, and the CV screen. Add to your CV the skills you have and it does not mention.</li>
+    <li>A job you applied to is still listed: press <b>I applied</b> on its card or its page.</li>
+  </ul>
+
+  <h2 id="data">Your data</h2>
+  <ul>
+    <li>Everything is on your computer, in one folder: <code>%LOCALAPPDATA%\jobbot</code> on Windows, <code>~/Library/Application Support/jobbot</code> on a Mac. See <a href="privacy.html">Privacy</a>.</li>
+    <li><b>That is not a GoodLuck! file</b>: choose the <code>.tar.gz</code> file Export made.</li>
+    <li><b>That file was made by a newer GoodLuck!</b>: install the newest version, then import it.</li>
+  </ul>
+
+  <h2>Still stuck?</h2>
+  <p><a href="https://github.com/VinhDac/GoodLuck/issues">Report a problem</a>: say what you did, what you saw, and the lines of the
+    journal around it. Never post a password, a token or your CV there.</p>
+</main>
+<footer class=p-foot><span>GoodLuck! 1.3.0 · Free for your own job search</span><nav><a href='tour.html'>See it work</a><a href='help.html'>Help</a><a href='download.html'>Download</a><a href='privacy.html'>Privacy</a><a href='license.html'>License</a><a href='https://github.com/VinhDac/GoodLuck/issues'>Report a problem</a></nav></footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* «SEE IT WORK»: the screen in the middle, what it is doing said under it. */
+:root{--ink:#EEF1FF;--dim:rgba(238,241,255,.68);--blue:#8C9CF8;
+  --serif:"Instrument Serif",Georgia,serif;--sans:Inter,-apple-system,"Segoe UI",system-ui,sans-serif;
+  --rainbow:linear-gradient(120deg,#6AA6FF,#A98CF8,#EF7FA0,#F2B866,#66CB8E)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#070a1c;color:var(--ink);font:15px/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:radial-gradient(1200px 600px at 50% -10%,rgba(106,166,255,.16),transparent),
+  radial-gradient(900px 500px at 90% 110%,rgba(239,127,160,.12),transparent),#070a1c}
+
+.t-top{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px clamp(14px,3vw,36px)}
+.t-brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:600}
+.t-mark{width:24px;height:24px;background:var(--blue);
+  -webkit-mask:var(--duck) center/contain no-repeat;mask:var(--duck) center/contain no-repeat}
+.t-chapters{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.t-chapters button{border:1px solid rgba(255,255,255,.14);background:transparent;color:var(--dim);
+  border-radius:16px;padding:6px 12px;font:500 12.5px/1 var(--sans);cursor:pointer;white-space:nowrap}
+.t-chapters button.on{color:#10131f;background:var(--ink);border-color:var(--ink)}
+.t-chapters button:disabled{opacity:.4;cursor:default}
+.t-get{color:#10131f;background:var(--ink);text-decoration:none;font-weight:600;font-size:14px;
+  padding:9px 16px;border-radius:20px;white-space:nowrap}
+
+.t-main{display:flex;flex-direction:column;align-items:center;gap:16px;padding:4px clamp(12px,3vw,36px) 18px}
+/* THE MONITOR: the screen's 16 by 10, as large as the window allows with what
+   is said under it, the whole in one window. */
+.t-monitor{position:relative;width:min(100%,calc((100vh - 262px) * 1.6));aspect-ratio:16/10;
+  border-radius:14px;overflow:hidden;background:#000;
+  box-shadow:0 0 0 1px rgba(255,255,255,.1),0 30px 80px rgba(0,0,0,.55)}
+.t-screen{position:absolute;inset:0}
+.t-screen .scr{transition:transform .6s cubic-bezier(.3,.7,.2,1)}
+
+.t-guide{width:min(100%,920px);text-align:center}
+.t-chap{margin:0 0 6px;font:500 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue)}
+.t-say{margin:0 auto 12px;min-height:2.3em;max-width:30em;font:400 clamp(21px,2.2vw,28px)/1.15 var(--serif)}
+.t-ctl{display:flex;align-items:center;justify-content:center;gap:10px}
+.t-btn{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);display:grid;place-items:center;cursor:pointer}
+.t-btn svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;
+  stroke-linejoin:round}
+.t-play{width:48px;height:48px;background:var(--ink)}
+.t-play svg{stroke:#10131f}
+.t-play [data-resume]{fill:#10131f}
+.t-btn svg[hidden]{display:none}
+.t-steps{display:flex;gap:6px;margin:0 6px}
+.t-steps i{width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.18)}
+.t-steps i.done{background:rgba(140,156,248,.55)}
+.t-steps i.on{background:var(--rainbow)}
+.t-count{min-width:44px;color:var(--dim);font-size:12.5px}
+/* A CHAPTER AT ITS END: the arrow to the next one lit. */
+.ended-next [data-next]{border-color:var(--blue);box-shadow:0 0 0 4px rgba(140,156,248,.18);
+  animation:tnext 1.6s ease-in-out infinite}
+@keyframes tnext{50%{box-shadow:0 0 0 9px rgba(140,156,248,.05)}}
+.t-nojs{text-align:center;padding:40px}
+
+/* A PHONE, OR A TABLET STOOD UP: the screen fills the width, taller than 16 by
+   10, and the camera goes close to what is being done (tour.js, its CAMERA). */
+@media (max-width:760px),(orientation:portrait){
+  .t-monitor{width:100%;aspect-ratio:auto;height:max(300px,calc(100vh - 330px));
+    height:max(300px,calc(100svh - 330px));border-radius:12px}
+}
+@media (max-width:760px){
+  .t-top{flex-wrap:wrap}
+  .t-ctl{gap:8px}
+  .t-steps{gap:4px;margin:0 2px}
+  .t-steps i{width:10px}
+  .t-count{min-width:34px}
+  .t-chapters{order:3;width:100%;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+  .t-say{font-size:23px}
+}

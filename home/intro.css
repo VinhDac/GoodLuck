@@ -1,0 +1,85 @@
+/* THE FIRST SCREEN: the duck in its ring, its name, one line, the two ways
+   on, and nothing else. home/intro.js draws the duck in 3D over the whole
+   screen, on the place kept for it here (.duckstage); without it the still
+   duck stands there, in a ring of its own. */
+.intro{position:relative;z-index:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;overflow:hidden;
+  padding:72px 16px 70px;background:#04060f}
+/* THE RAINBOW'S LIGHT behind it, turning slowly, as the app's ring does. */
+.intro .aura{position:absolute;left:50%;top:40%;width:min(120vh,150vw);aspect-ratio:1;z-index:-1;
+  transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;opacity:.32;filter:blur(70px);
+  background:conic-gradient(from 0deg,#6AA6FF,#A98CF8,#EF7FA0,#F2B866,#66CB8E,#6AA6FF);
+  -webkit-mask:radial-gradient(closest-side,#000 30%,transparent 100%);
+  mask:radial-gradient(closest-side,#000 30%,transparent 100%);
+  animation:aura 28s linear infinite,fadein 1.6s ease-out both}
+@keyframes aura{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.intro .dusk{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 120%,rgba(4,6,15,0) 40%,#04060f 75%),
+    linear-gradient(transparent 70%,#04060f)}
+.scene3d{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .4s ease}
+.scene3d canvas{display:block;width:100%;height:100%}
+.intro.live .scene3d{opacity:1}
+
+/* THE DUCK'S PLACE: pressed, the duck hops and turns. The still duck shows
+   only if the 3D one has not come by then, and bobs as the 3D one does. */
+.duckstage{position:relative;width:min(40vh,72vw,480px);aspect-ratio:1;margin:0 auto;
+  cursor:pointer;-webkit-tap-highlight-color:transparent}
+.duckstage svg{position:absolute;inset:22%;width:56%;height:56%;fill:#8C9CF8;
+  filter:drop-shadow(0 14px 30px rgba(0,0,0,.45));
+  animation:fadein .6s 1.2s both,bob 3.3s 1.8s ease-in-out infinite}
+.duckstage::before{content:'';position:absolute;inset:12.9%;border-radius:50%;padding:2px;
+  background:conic-gradient(#6AA6FF,#A98CF8,#EF7FA0,#F2B866,#66CB8E,#6AA6FF);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  box-shadow:0 0 30px rgba(169,140,248,.5);animation:fadein .6s 1.2s both}
+.intro.live .duckstage svg,.intro.live .duckstage::before{animation:none;opacity:0}
+@keyframes bob{50%{transform:translateY(-3%)}}
+
+/* ITS NAME: letter by letter it stands up, white on a blue side as the duck
+   is, a light going over it; then it ripples each time the duck turns
+   (intro.js: landed, wave). */
+.word{position:relative;margin:0;font:800 clamp(52px,min(10.5vw,13.5vh),148px)/1 Inter,var(--sans);
+  letter-spacing:-.045em;color:#fff;white-space:nowrap;perspective:700px}
+.word i{position:relative;z-index:0;display:inline-block;font-style:normal;transform-origin:50% 85%;
+  animation:letter .8s calc(1s + var(--i) * 65ms) cubic-bezier(.2,.9,.3,1.25) both}
+.word i::before{content:attr(data-l);position:absolute;left:0;top:0;z-index:-1;color:#5f6ee0;
+  text-shadow:0 1px 0 #8C9CF8,0 2px 0 #8796f6,0 3px 0 #808ff1,0 4px 0 #7988eb,
+    0 5px 0 #7180e4,0 6px 0 #6978dc,0 7px 0 #6170d3,0 8px 0 #5968c9,0 22px 40px rgba(2,3,14,.75)}
+.word i::after{content:attr(data-l);position:absolute;left:0;top:0;color:transparent;
+  background:linear-gradient(100deg,transparent 28%,#ffffff 44%,#EF7FA0 53%,#F2B866 60%,transparent 76%)
+    200% 0/320% 100% no-repeat;
+  -webkit-background-clip:text;background-clip:text;
+  animation:sheen .7s calc(1.75s + var(--i) * 65ms) ease-in-out both}
+@keyframes letter{from{opacity:0;transform:translateY(60%) rotateX(-100deg)}}
+@keyframes sheen{from{background-position:200% 0}to{background-position:-110% 0}}
+.word.landed i,.word.landed i::after{animation:none}
+.word.landed.wave i{animation:hop .8s calc(var(--i) * 55ms) cubic-bezier(.3,.7,.3,1) both}
+.word.landed.wave i::after{animation:sheen .65s calc(.1s + var(--i) * 55ms) ease-in-out both}
+@keyframes hop{35%{transform:translateY(-14%) rotate(-3deg)}70%{transform:translateY(2%)}}
+
+.intro .line{margin:clamp(14px,2.4vh,24px) 0 0;max-width:24em;
+  font:400 clamp(22px,min(2.7vw,4vh),36px)/1.2 var(--serif);
+  color:rgba(238,241,255,.88);text-wrap:balance;animation:rise .8s 1.6s ease-out both}
+.intro .line em{font-style:italic;background:var(--rainbow);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.intro .ctas{justify-content:center;margin-top:clamp(16px,3vh,30px)!important;animation:rise .8s 1.8s ease-out both}
+.intro .cta{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:28px;font-size:16px}
+.intro .cta svg{width:12px;height:12px;fill:currentColor}
+.intro .small{margin:14px 0 0;font-size:13px;color:var(--text-dim);letter-spacing:.02em;
+  animation:rise .8s 1.95s ease-out both}
+/* ON DOWN: the day with the duck under it. */
+.intro .down{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;
+  flex-direction:column;align-items:center;gap:8px;font:500 11.5px/1 var(--sans);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-dim);text-decoration:none;animation:fadein .8s 2.4s ease-out both}
+.intro .down::after{content:'';width:1px;height:26px;background:linear-gradient(var(--text-dim),transparent);
+  animation:drip 1.8s ease-in-out infinite}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@keyframes fadein{from{opacity:0}}
+
+@media (max-width:760px){
+  .intro{padding:68px 16px 72px}
+  .duckstage{width:min(40vh,84vw)}
+  .intro .cta{padding:13px 20px;font-size:15px}
+  .intro .small{font-size:12.5px}
+}
+@media (max-height:700px){ .intro .down{display:none} .intro{padding-bottom:40px} }

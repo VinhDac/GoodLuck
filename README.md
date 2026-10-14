@@ -6,9 +6,10 @@ GoodLuck! finds new jobs while you get on with your day, scores each one against
 
 Free for personal use, on Mac and Windows.
 
-- **Website and live demo:** https://vinhdac.github.io/GoodLuck/
-- **Download:** [GoodLuck! 1.3.0](https://vinhdac.github.io/GoodLuck/download/)
-- **Guide:** https://vinhdac.github.io/GoodLuck/guide/
+- **Website:** https://vinhdac.github.io/GoodLuck/
+- **See it work, step by step:** https://vinhdac.github.io/GoodLuck/tour.html
+- **Download:** [GoodLuck! 1.3.0](https://vinhdac.github.io/GoodLuck/download.html)
+- **Help:** https://vinhdac.github.io/GoodLuck/help.html
 - **Report a problem:** [Issues](https://github.com/VinhDac/GoodLuck/issues)
 
 ## What it does
@@ -20,7 +21,7 @@ Free for personal use, on Mac and Windows.
 
 ## Private by design
 
-There is no GoodLuck! account and no GoodLuck! server. The app runs on your computer and keeps everything there. Read the [privacy note](https://vinhdac.github.io/GoodLuck/privacy/).
+There is no GoodLuck! account and no GoodLuck! server. The app runs on your computer and keeps everything there. Read the [privacy note](https://vinhdac.github.io/GoodLuck/privacy.html).
 
 ## License
 

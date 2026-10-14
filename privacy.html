@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoodLuck! privacy</title>
+<meta name="description" content="GoodLuck! has no account and no server of ours: what it keeps, what goes over the network, and why.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+<header class=p-top><a class=p-brand href='index.html'><span class=p-mark></span>GoodLuck!</a><nav><a href='tour.html'>See it work</a><a href='help.html'>Help</a><a class=get href='download.html'>Download, free</a></nav></header>
+<main>
+  <h1>Privacy</h1>
+  <p class="lead">GoodLuck! has no account and no server of ours. It runs on your computer, keeps what it
+    knows there, and sends nothing to us. This note says what it keeps, what goes over the network, and why.</p>
+
+  <h2>What it keeps, and where</h2>
+  <ul>
+    <li><b>Your search:</b> your profile and CV, the jobs it found, your applications, what it read in your
+      mailbox, the chat, and its journal. They are in one folder on your computer: <code>%LOCALAPPDATA%\jobbot</code>
+      on Windows, <code>~/Library/Application Support/jobbot</code> on a Mac.</li>
+    <li><b>Your passwords and keys:</b> the mailbox's app password, your Telegram bot token, the assistant's key,
+      and the password of any account you let it make on an employer's site are kept in your system's own vault,
+      Credential Manager on Windows and Keychain on a Mac.</li>
+    <li><b>Copies you make:</b> the file Export everything writes holds everything, your passwords included. Keep it
+      to yourself.</li>
+  </ul>
+
+  <h2>What goes over the network, and why</h2>
+  <h3>Job boards</h3>
+  <p>To search, GoodLuck! asks companies' public job boards for their postings. These requests carry nothing
+    about you: the boards see your IP address, as with any visit.</p>
+  <h3>Job sites</h3>
+  <p>To search job sites, it opens them in a browser window of its own, with a profile kept in its folder, and
+    does not sign in. A site receives what such a search sends: your job titles, one of your countries and your
+    levels, with your IP address. All this happens only during the hours set in Settings, Run.</p>
+  <h3>Your mailbox</h3>
+  <p>It reads the job mailbox over an encrypted connection, with your address and app password, to find the mail
+    about your applications and your job alerts, and keeps the sender, subject, date and first lines of each
+    message on your computer. It marks nothing as read, moves nothing, and never sends mail.</p>
+  <h3>Employers' forms (Send CV)</h3>
+  <p>When you press Send CV, or Fill it in, it opens each employer's form in a second browser window, the Apply
+    window, and fills it with your profile's answers and your CV. It leaves the Submit to you, unless you turn
+    its safe mode off. It makes an account on an employer's site only after your yes for that site. In that window
+    you may sign in where you choose; on a job site it only reads where a job's Apply leads, and presses nothing
+    there.</p>
+  <h3>Telegram, if you connect a bot</h3>
+  <p>The messages it sends you go through Telegram's servers: job titles, companies, places, scores and links,
+    your applications and where they stand, the questions a form asks, and the day's numbers. Telegram keeps what
+    it delivers, as it does for any message.</p>
+  <h3>The assistant, if you connect it</h3>
+  <p>What you type in the chat goes to Groq, with what the app fetched to answer it: jobs, companies, scores,
+    your applications and where they stand, and a mail's words when you ask about it. Your profile's answers are
+    not sent. A draft (an answer a form asks you to write, a follow-up, notes for an interview, a line of your CV)
+    sends the posting, your CV's words and the employer's mail, without your name, email, phone or links, and only
+    when you press for it.</p>
+  <h3>Links you click</h3>
+  <p>An original posting, the page where you make an app password, the link to your bot: these open in your own
+    browser. The app does not fetch them.</p>
+
+  <h2>What it never does</h2>
+  <ul>
+    <li><b>No analytics, no tracking, no crash reports, no update checks.</b> Nothing about you or your use of the
+      app is sent to us or to anyone else.</li>
+    <li><b>No mail sent.</b> An application goes only by your Submit, or by Send CV with safe mode off.</li>
+    <li><b>Nothing open to the network.</b> The app's windows talk to it at 127.0.0.1, an address only your own
+      computer can reach.</li>
+  </ul>
+
+  <h2>This website</h2>
+  <p>These are plain pages. We set no cookies and use no analytics. The tour plays on made-up names and real
+    numbers; nothing you do on it leaves your browser.</p>
+
+  <h2>Questions</h2>
+  <p>Ask on the <a href="https://github.com/VinhDac/GoodLuck/issues">issues page</a>. Never post a password, a token or your CV there.</p>
+</main>
+<footer class=p-foot><span>GoodLuck! 1.3.0 · Free for your own job search</span><nav><a href='tour.html'>See it work</a><a href='help.html'>Help</a><a href='download.html'>Download</a><a href='privacy.html'>Privacy</a><a href='license.html'>License</a><a href='https://github.com/VinhDac/GoodLuck/issues'>Report a problem</a></nav></footer>
+</body>
+</html>

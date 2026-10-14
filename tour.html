@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoodLuck! · See it work</title>
+<meta name="description" content="Watch GoodLuck on a real Windows screen: install it, set it up, and let it look for jobs every hour, on your own computer. Free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="screen/screen.css">
+<link rel="stylesheet" href="screen/parts.css">
+<link rel="stylesheet" href="tour.css">
+</head>
+<body>
+<header class="t-top">
+  <a class="t-brand" href="index.html"><span class="t-mark"></span>GoodLuck!</a>
+  <nav class="t-chapters" data-chapters aria-label="Chapters"></nav>
+  <a class="t-get" href="download.html">Download, free</a>
+</header>
+
+<main class="t-main">
+  <div class="t-monitor" data-monitor>
+    <div class="t-screen" data-screen></div>
+  </div>
+  <section class="t-guide" aria-live="polite">
+    <p class="t-chap" data-chap></p>
+    <p class="t-say" data-say></p>
+    <div class="t-ctl">
+      <button class="t-btn" data-back aria-label="Back a step">
+        <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="t-btn t-play" data-play aria-label="Pause">
+        <svg viewBox="0 0 24 24" data-pause><path d="M9 6v12M15 6v12"/></svg>
+        <svg viewBox="0 0 24 24" data-resume hidden><path d="M8 5l11 7-11 7z"/></svg>
+        <svg viewBox="0 0 24 24" data-again hidden><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4.5 4v4.5H9"/></svg></button>
+      <button class="t-btn" data-next aria-label="Next step">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      <div class="t-steps" data-steps></div>
+      <span class="t-count" data-count></span>
+    </div>
+  </section>
+</main>
+
+<noscript><p class="t-nojs">This page shows GoodLuck at work on a Windows screen, and needs
+  JavaScript to play.</p></noscript>
+<script src="data/fresh.js"></script>
+<script src="data/full.js"></script>
+<script src="screen/screen.js"></script>
+<script src="screen/parts.js"></script>
+<script src="screen/app.js"></script>
+<script src="chapters/common.js"></script>
+<script src="chapters/ch1.js"></script>
+<script src="chapters/ch2.js"></script>
+<script src="chapters/ch3.js"></script>
+<script src="chapters/ch4.js"></script>
+<script src="chapters/ch5.js"></script>
+<script src="chapters/ch6.js"></script>
+<script src="chapters/ch7.js"></script>
+<script src="chapters/ch8.js"></script>
+<script src="tour.js"></script>
+</body>
+</html>
