@@ -22,7 +22,7 @@
     <li><b>Your search:</b> your profile and CV, the jobs it found, your applications, what it read in your
       mailbox, the chat, and its journal. They are in one folder on your computer: <code>%LOCALAPPDATA%\jobbot</code>
       on Windows, <code>~/Library/Application Support/jobbot</code> on a Mac.</li>
-    <li><b>Your passwords and keys:</b> the mailbox's app password, your Telegram bot token, the assistant's key,
+    <li><b>Your passwords and keys:</b> the mailbox's app password, your Telegram bot token, the assistant's keys,
       and the password of any account you let it make on an employer's site are kept in your system's own vault,
       Credential Manager on Windows and Keychain on a Mac.</li>
     <li><b>Copies you make:</b> the file Export everything writes holds everything, your passwords included. Keep it
@@ -54,17 +54,32 @@
   <h3>The assistant, if you connect it</h3>
   <p>What you type in the chat goes to Groq, with what the app fetched to answer it: jobs, companies, scores,
     your applications and where they stand, and a mail's words when you ask about it. Your profile's answers are
-    not sent. A draft (an answer a form asks you to write, a follow-up, notes for an interview, a line of your CV)
-    sends the posting, your CV's words and the employer's mail, without your name, email, phone or links, and only
-    when you press for it.</p>
+    not sent. A draft (an answer a form asks you to write, a cover letter or a note you ask for, a follow-up, notes
+    and a reply for an interview, a line of your CV) sends the posting, your CV's words and the employer's mail,
+    without your name, email, phone or links, and only when you ask for it.</p>
+  <p>If you choose Claude instead (Settings, General, an advanced choice), the same goes to Anthropic, with an API
+    key of your own Claude Console account, and is billed to that account by use. The key is kept in your system's
+    vault, like the others.</p>
+  <p>With Claude, a question about the world outside the app (a company, how it hires, a visa's rules) is searched
+    on the web: your question goes to Anthropic, which searches for it and reads the pages it finds. Only the
+    question goes, never your CV or your profile. Groq searches nothing.</p>
+  <h3>Updates</h3>
+  <p>When it opens, and once a day after, it asks GitHub which version of GoodLuck! is the newest. The request
+    carries nothing about you: GitHub sees your IP address, as with any visit. A newer version is told in the chat,
+    and nothing is downloaded until you press Update now. The file is then checked against the one GitHub publishes
+    before it is put in.</p>
+  <h3>Job links you paste</h3>
+  <p>A job's link you paste in the chat is read by the app, from the job board's public API or from the page
+    itself, so it can keep and score that job. The request carries nothing about you: the site sees your IP
+    address, as with any visit. A page of your own computer or your network is never read.</p>
   <h3>Links you click</h3>
-  <p>An original posting, the page where you make an app password, the link to your bot: these open in your own
-    browser. The app does not fetch them.</p>
+  <p>An original posting, the page where you make an app password, the link to your bot, a page the assistant
+    found on the web: these open in your own browser. The app does not fetch them.</p>
 
   <h2>What it never does</h2>
   <ul>
-    <li><b>No analytics, no tracking, no crash reports, no update checks.</b> Nothing about you or your use of the
-      app is sent to us or to anyone else.</li>
+    <li><b>No analytics, no tracking, no crash reports.</b> Nothing about you or your use of the app is sent to us
+      or to anyone else.</li>
     <li><b>No mail sent.</b> An application goes only by your Submit, or by Send CV with safe mode off.</li>
     <li><b>Nothing open to the network.</b> The app's windows talk to it at 127.0.0.1, an address only your own
       computer can reach.</li>
@@ -77,6 +92,6 @@
   <h2>Questions</h2>
   <p>Ask on the <a href="https://github.com/VinhDac/GoodLuck/issues">issues page</a>. Never post a password, a token or your CV there.</p>
 </main>
-<footer class=p-foot><span>GoodLuck! 1.4.0 · Free for your own job search</span><nav><a href='tour.html'>See it work</a><a href='help.html'>Help</a><a href='download.html'>Download</a><a href='privacy.html'>Privacy</a><a href='license.html'>License</a><a href='https://github.com/VinhDac/GoodLuck/issues'>Report a problem</a></nav></footer>
+<footer class=p-foot><span>GoodLuck! 1.5.0 · Free for your own job search</span><nav><a href='tour.html'>See it work</a><a href='help.html'>Help</a><a href='download.html'>Download</a><a href='privacy.html'>Privacy</a><a href='license.html'>License</a><a href='https://github.com/VinhDac/GoodLuck/issues'>Report a problem</a></nav></footer>
 </body>
 </html>

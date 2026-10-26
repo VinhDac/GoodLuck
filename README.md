@@ -8,7 +8,7 @@ Free for personal use, on Mac and Windows.
 
 - **Website:** https://vinhdac.github.io/GoodLuck/
 - **See it work, step by step:** https://vinhdac.github.io/GoodLuck/tour.html
-- **Download:** [GoodLuck! 1.4.0](https://vinhdac.github.io/GoodLuck/download.html)
+- **Download:** [GoodLuck! 1.5.0](https://vinhdac.github.io/GoodLuck/download.html)
 - **Help:** https://vinhdac.github.io/GoodLuck/help.html
 - **Report a problem:** [Issues](https://github.com/VinhDac/GoodLuck/issues)
 
